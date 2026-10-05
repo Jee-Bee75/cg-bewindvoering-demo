@@ -1,0 +1,358 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>C&G — Kalm Kapitaal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: editorial magazine — asymmetrisch raster, oversized serif-display, rustige dennengroen op warm krijt, apricot als enige durf, één donker pine-moment */
+:root{
+  --paper:#f1ede4;      /* warm krijt */
+  --surface:#faf8f2;    /* lichte kaart */
+  --ink:#182a22;        /* diep dennen-inkt */
+  --muted:#5c6b63;      /* gedempt */
+  --pine:#1f4f3f;       /* hoofdaccent, diep */
+  --pine-soft:#2d6b55;
+  --apricot:#db8233;    /* warme tweede kleur */
+  --line:#ddd6c6;       /* zachte regels */
+  color-scheme:light;
+  --maxw:1180px;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1713; --surface:#16211b; --ink:#eef3ec; --muted:#9fb1a6;
+  --pine:#58c0a0; --pine-soft:#7fd3b6; --apricot:#eaa558; --line:#273530; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f1713; --surface:#16211b; --ink:#eef3ec; --muted:#9fb1a6;
+  --pine:#58c0a0; --pine-soft:#7fd3b6; --apricot:#eaa558; --line:#273530; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--sans);
+  font-size:17px; line-height:1.6; margin:0; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:400; font-family:var(--serif); line-height:1.02; text-wrap:balance; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--apricot); outline-offset:3px; border-radius:4px}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(18px,5vw,56px)}
+.lbl{font-family:var(--sans); font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; color:var(--pine)}
+
+/* utility strip */
+.util{background:var(--ink); color:var(--paper)}
+.util .wrap{display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:40px; font-size:.8rem; letter-spacing:.04em}
+.util a{color:var(--paper); text-decoration:none; opacity:.85}
+.util a:hover{opacity:1}
+.util .u-right{display:flex; gap:1.4rem}
+@media(max-width:640px){.util .u-tag{display:none}}
+
+/* header */
+.hd{position:sticky; top:env(safe-area-inset-top,0px); z-index:40; background:color-mix(in srgb,var(--paper) 90%,transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex; align-items:center; gap:2rem; min-height:76px}
+.brand{display:flex; align-items:center; gap:.65rem; text-decoration:none; color:var(--ink); margin-right:auto}
+.brand .mark{flex:0 0 auto}
+.brand .wordmark{font-family:var(--serif); font-size:1.7rem; line-height:1; letter-spacing:.01em}
+.brand .amp{color:var(--apricot); font-style:italic}
+.brand .sub{display:block; font-family:var(--sans); font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2px}
+.nav{display:flex; align-items:center; gap:1.6rem}
+.nav a{text-decoration:none; color:var(--muted); font-weight:500; font-size:.96rem}
+.nav a:hover{color:var(--ink)}
+.cta{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--sans); font-weight:600; font-size:.96rem; padding:.62rem 1.25rem; border-radius:2px; text-decoration:none; border:1.5px solid var(--ink); background:var(--ink); color:var(--paper); transition:.15s}
+.cta:hover{background:transparent; color:var(--ink)}
+.cta.line{background:transparent; color:var(--ink); border-color:var(--line)}
+.cta.line:hover{border-color:var(--ink)}
+.cta.onpine{background:var(--paper); color:var(--ink); border-color:var(--paper)}
+.cta.onpine:hover{background:transparent; color:var(--paper)}
+.burger{display:none; background:none; border:0; color:var(--ink); cursor:pointer; padding:.3rem}
+@media(max-width:880px){
+  .nav{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; background:var(--surface); border-bottom:1px solid var(--line); padding:.4rem clamp(18px,5vw,56px) 1.1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.75rem 0; border-bottom:1px solid var(--line)}
+  .nav .cta{margin-top:.8rem; justify-content:center}
+  .burger{display:inline-flex}
+}
+
+/* hero */
+.hero .wrap{padding-block:clamp(2.6rem,7vw,5rem) clamp(2rem,5vw,3.5rem)}
+.hero-grid{display:grid; grid-template-columns:1fr auto; gap:1.5rem 3rem; align-items:end}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(3rem,10vw,7.2rem); letter-spacing:-.025em}
+.hero h1 em{font-style:italic; color:var(--pine)}
+.hero .kick{display:flex; align-items:center; gap:1rem; margin-bottom:1.6rem}
+.hero .kick .rule{height:1px; flex:1; background:var(--line); max-width:120px}
+.hero .yr{font-family:var(--serif); font-size:clamp(3rem,7vw,5rem); color:var(--apricot); line-height:.8; font-variant-numeric:tabular-nums}
+.hero .yr small{display:block; font-family:var(--sans); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:.6rem}
+.hero-foot{display:grid; grid-template-columns:1.3fr 1fr; gap:2.5rem; margin-top:clamp(2rem,5vw,3.2rem); padding-top:2rem; border-top:1px solid var(--line); align-items:start}
+@media(max-width:720px){.hero-foot{grid-template-columns:1fr; gap:1.6rem}}
+.hero-foot .lead{font-size:clamp(1.15rem,2vw,1.4rem); color:var(--ink); max-width:38ch}
+.hero-foot .acts{display:flex; gap:.8rem; flex-wrap:wrap; align-items:center}
+
+/* marquee / principes band */
+.band{background:var(--surface); border-block:1px solid var(--line); overflow:hidden}
+.band .wrap{display:flex; flex-wrap:wrap; gap:1.5rem 3rem; padding-block:1.4rem; align-items:center; justify-content:space-between}
+.band .pr{display:flex; align-items:baseline; gap:.7rem}
+.band .pr b{font-family:var(--serif); font-size:1.9rem; color:var(--pine); font-variant-numeric:tabular-nums; line-height:1}
+.band .pr span{font-size:.92rem; color:var(--muted); max-width:16ch; line-height:1.3}
+
+/* section scaffold */
+section{scroll-margin-top:100px}
+.sec{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.sec-head{display:grid; grid-template-columns:auto 1fr; gap:1.4rem; align-items:end; margin-bottom:3rem}
+@media(max-width:720px){.sec-head{grid-template-columns:1fr; gap:.8rem}}
+.sec-head h2{font-size:clamp(2.2rem,5.5vw,4rem)}
+.sec-head .lbl{align-self:start; padding-top:.5rem}
+
+/* diensten — editorial index */
+.idx{border-top:1px solid var(--ink)}
+.row{display:grid; grid-template-columns:auto 1fr auto; gap:1.5rem 2.5rem; align-items:baseline; padding:2rem 0; border-bottom:1px solid var(--line); text-decoration:none; color:inherit; transition:.2s}
+.row:hover{padding-inline:1rem 0; background:color-mix(in srgb,var(--pine) 5%,transparent)}
+.row .mk{font-family:var(--serif); font-size:1.5rem; color:var(--apricot)}
+.row .body{display:grid; grid-template-columns:1fr 1.3fr; gap:.4rem 3rem; align-items:baseline}
+@media(max-width:820px){.row{grid-template-columns:auto 1fr; gap:.8rem 1.2rem} .row .arrow{display:none} .row .body{grid-template-columns:1fr; gap:.5rem}}
+.row h3{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+.row p{color:var(--muted); font-size:1.02rem; max-width:44ch}
+.row .arrow{color:var(--pine); transition:.2s}
+.row:hover .arrow{transform:translate(6px,0)}
+
+/* belofte — donker pine moment */
+.promise{background:var(--pine); color:var(--paper)}
+:root[data-theme="dark"] .promise, :root:not([data-theme="light"]) .promise{color:#071712}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .promise{color:#071712}}
+.promise .wrap{padding-block:clamp(3.5rem,8vw,6rem)}
+.promise .lbl{color:color-mix(in srgb,currentColor 70%,transparent)}
+.promise blockquote{margin:1.2rem 0 0; font-family:var(--serif); font-size:clamp(2rem,5vw,3.6rem); line-height:1.08; max-width:20ch; letter-spacing:-.01em}
+.promise blockquote em{font-style:italic; color:var(--apricot)}
+:root[data-theme="dark"] .promise blockquote em, :root:not([data-theme="light"]) .promise blockquote em{color:#f0c58a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .promise blockquote em{color:#f0c58a}}
+.promise .by{margin-top:2rem; font-size:.95rem; opacity:.85; letter-spacing:.03em}
+
+/* werkwijze — sequence */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.stp{padding:2rem; border:1px solid var(--line); margin:-.5px}
+.stp .n{font-family:var(--serif); font-size:3.4rem; color:var(--pine); line-height:.8; font-variant-numeric:tabular-nums}
+.stp h3{font-size:1.4rem; margin:1rem 0 .5rem}
+.stp p{color:var(--muted); font-size:1rem}
+
+/* voor wie */
+.two{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line)}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.pane{background:var(--surface); padding:clamp(1.8rem,4vw,2.6rem)}
+.pane.dark{background:var(--ink); color:var(--paper)}
+:root[data-theme="dark"] .pane.dark, :root:not([data-theme="light"]) .pane.dark{background:#0a110d}
+.pane h3{font-size:1.9rem; margin-bottom:1.1rem}
+.pane ul{list-style:none; margin:0; padding:0}
+.pane li{padding:.65rem 0; border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent); display:flex; gap:.7rem; align-items:flex-start; color:var(--muted)}
+.pane.dark li{border-color:rgba(255,255,255,.12); color:color-mix(in srgb,var(--paper) 80%,transparent)}
+.pane li:last-child{border-bottom:0}
+.pane li svg{flex:0 0 auto; margin-top:4px; color:var(--apricot)}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer; list-style:none; padding:1.3rem 0; font-family:var(--serif); font-size:clamp(1.3rem,2.6vw,1.75rem); display:flex; justify-content:space-between; gap:1.5rem; align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary .pm{font-family:var(--sans); font-size:1.6rem; color:var(--apricot); transition:.2s; flex:0 0 auto; line-height:1}
+details[open] summary .pm{transform:rotate(45deg)}
+details p{color:var(--muted); padding-bottom:1.4rem; max-width:62ch; font-size:1.05rem}
+
+/* contact */
+.contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center}
+@media(max-width:820px){.contact .wrap{grid-template-columns:1fr; gap:2rem}}
+.contact h2{font-size:clamp(2.4rem,6vw,4.5rem)}
+.contact h2 em{font-style:italic; color:var(--pine)}
+.cinfo{display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line)}
+.cinfo a, .cinfo span{display:flex; align-items:center; gap:.9rem; padding:1.05rem 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); font-size:1.05rem; font-weight:500}
+.cinfo a:hover{color:var(--pine)}
+.cinfo svg{flex:0 0 auto; color:var(--pine)}
+.cinfo .big{font-family:var(--serif); font-size:1.8rem; font-weight:400}
+
+/* footer */
+.ft{background:var(--ink); color:var(--paper); padding-block:clamp(3rem,6vw,4.5rem) 2.5rem; margin-top:0}
+.ft a{color:var(--paper); text-decoration:none; opacity:.8}
+.ft a:hover{opacity:1}
+.ft-grid{display:flex; flex-wrap:wrap; gap:2.5rem 4rem; justify-content:space-between}
+.ft-brand{max-width:32ch}
+.ft-brand .wordmark{font-family:var(--serif); font-size:2rem}
+.ft-brand .amp{color:var(--apricot); font-style:italic}
+.ft-brand p{margin-top:.9rem; opacity:.7; font-size:.95rem; line-height:1.55}
+.ft-col h4{font-family:var(--sans); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; opacity:.6; margin:0 0 1rem}
+.ft-col a, .ft-col span{display:block; margin-bottom:.6rem; font-size:.98rem; opacity:.85}
+.ft-bot{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid rgba(255,255,255,.14); display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; justify-content:space-between; font-size:.84rem; opacity:.65}
+@media(prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<!-- utility -->
+<div class="util"><div class="wrap">
+  <span class="u-tag">Beschermingsbewind · Mentorschap · Curatele — Rijswijk &amp; Den Haag</span>
+  <span class="u-right"><a href="tel:+31703077605">070 307 76 05</a><a href="mailto:info@cgbewindvoering.nl">info@cgbewindvoering.nl</a></span>
+</div></div>
+
+<!-- header -->
+<header class="hd"><div class="wrap">
+  <a class="brand" href="#top" aria-label="C en G Bewindvoering, naar boven">
+    <svg class="mark" width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <rect x="1.5" y="1.5" width="45" height="45" rx="3" stroke="var(--ink)" stroke-width="2"/>
+      <path d="M33 16a9 9 0 100 16" stroke="var(--pine)" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M24 32a8 8 0 10-8-8v12h8" stroke="var(--apricot)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span><span class="wordmark">C<span class="amp">&amp;</span>G</span><span class="sub">Bewindvoering</span></span>
+  </a>
+  <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <nav class="nav" id="nav">
+    <a href="#diensten">Diensten</a>
+    <a href="#werkwijze">Werkwijze</a>
+    <a href="#voor-wie">Voor wie</a>
+    <a href="#vragen">Vragen</a>
+    <a class="cta" href="#contact">Aanmelden</a>
+  </nav>
+</div></header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero"><div class="wrap">
+    <div class="kick"><span class="lbl">Bewindvoering met rust &amp; richting</span><span class="rule"></span></div>
+    <div class="hero-grid">
+      <h1>Weer grip op<br>uw <em>geldzaken</em>.</h1>
+      <div class="yr">2015<small>Vertrouwd sinds</small></div>
+    </div>
+    <div class="hero-foot">
+      <p class="lead">Wanneer de administratie u boven het hoofd groeit, nemen wij het beheer over. Zorgvuldig, dichtbij en altijd in overleg. Zodat u ruimte houdt voor wat er echt toe doet.</p>
+      <div class="acts">
+        <a class="cta" href="#contact">Gratis kennismaken
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta line" href="#diensten">Bekijk diensten</a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- BAND -->
+  <div class="band"><div class="wrap">
+    <span class="pr"><b>09</b><span>jaar vertrouwde praktijk</span></span>
+    <span class="pr"><b>3</b><span>vormen van bescherming</span></span>
+    <span class="pr"><b>Aegis</b><span>branchelidmaatschap</span></span>
+    <span class="pr"><b>1&nbsp;op&nbsp;1</b><span>persoonlijk contact</span></span>
+  </div></div>
+
+  <!-- DIENSTEN -->
+  <section id="diensten" class="sec"><div class="wrap">
+    <div class="sec-head"><span class="lbl">Diensten</span><h2>Bescherming op maat</h2></div>
+    <div class="idx">
+      <a class="row" href="#contact">
+        <span class="mk">A</span>
+        <span class="body"><h3>Beschermingsbewind</h3><p>Wij beheren uw inkomen en uitgaven, betalen vaste lasten op tijd en ordenen de administratie. U houdt overzicht, wij houden koers.</p></span>
+        <svg class="arrow" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="row" href="#contact">
+        <span class="mk">B</span>
+        <span class="body"><h3>Mentorschap</h3><p>Lukt het niet meer zelf te beslissen over zorg en welzijn? Als mentor sta ik naast u en behartig uw persoonlijke belangen, met respect voor uw wensen.</p></span>
+        <svg class="arrow" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="row" href="#contact">
+        <span class="mk">C</span>
+        <span class="body"><h3>Curatele</h3><p>De meest volledige bescherming, voor financiële én persoonlijke zaken. Wij nemen de verantwoordelijkheid over wanneer dat echt nodig is.</p></span>
+        <svg class="arrow" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div></section>
+
+  <!-- BELOFTE -->
+  <div class="promise"><div class="wrap">
+    <span class="lbl">Onze belofte</span>
+    <blockquote>Rust in uw financiën begint met iemand die <em>écht luistert</em>.</blockquote>
+    <p class="by">— C&amp;G Bewindvoering, aangesloten bij Aegis</p>
+  </div></div>
+
+  <!-- WERKWIJZE -->
+  <section id="werkwijze" class="sec"><div class="wrap">
+    <div class="sec-head"><span class="lbl">Werkwijze</span><h2>In drie stappen</h2></div>
+    <div class="steps">
+      <div class="stp"><div class="n">1</div><h3>Aanmelden</h3><p>Via het formulier, de telefoon of een verwijzer. Het eerste gesprek is gratis en vrijblijvend.</p></div>
+      <div class="stp"><div class="n">2</div><h3>Kennismaken</h3><p>We brengen uw situatie rustig in kaart en leggen uit welke vorm van bescherming bij u past.</p></div>
+      <div class="stp"><div class="n">3</div><h3>Wij regelen het</h3><p>Na goedkeuring van de rechter nemen wij het beheer over. U wordt bij elke stap op de hoogte gehouden.</p></div>
+    </div>
+  </div></section>
+
+  <!-- VOOR WIE -->
+  <section id="voor-wie" class="sec" style="padding-top:0"><div class="wrap">
+    <div class="sec-head"><span class="lbl">Voor wie</span><h2>Voor u, en voor wie u verwijst</h2></div>
+    <div class="two">
+      <div class="pane">
+        <h3>Voor u of een naaste</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Post en rekeningen stapelen zich op</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Schulden die u niet meer overziet</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Ziekte, beperking of ouderdom maakt beheer te zwaar</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> U wilt weer rust en grip op uw geld</li>
+        </ul>
+      </div>
+      <div class="pane dark">
+        <h3>Voor verwijzers</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Gemeenten, hulpverleners en zorginstellingen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Korte lijnen en snelle terugkoppeling</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Heldere rapportage volgens de Aegis-normen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Aanmelden kan rechtstreeks via contact</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- VRAGEN -->
+  <section id="vragen" class="sec" style="background:var(--surface); border-block:1px solid var(--line)"><div class="wrap">
+    <div class="sec-head"><span class="lbl">Vragen</span><h2>Goed om te weten</h2></div>
+    <div class="faq">
+      <details open><summary>Wat is het verschil tussen bewind, mentorschap en curatele?<span class="pm">+</span></summary>
+        <p>Bij beschermingsbewind beheren wij uw geld en goederen. Bij mentorschap nemen wij beslissingen over zorg en welzijn. Curatele combineert beide en is de meest vergaande vorm. In een kennismaking leggen we uit wat bij uw situatie past.</p></details>
+      <details><summary>Wat kost bewindvoering?<span class="pm">+</span></summary>
+        <p>De tarieven zijn wettelijk vastgesteld door de overheid. Heeft u een laag inkomen? Dan vergoedt de gemeente de kosten vaak via de bijzondere bijstand. We bespreken dit vooraf, zonder verrassingen.</p></details>
+      <details><summary>Hoe meld ik mij of iemand anders aan?<span class="pm">+</span></summary>
+        <p>Neem contact op via de telefoon of het formulier. We plannen een gratis kennismaking en begeleiden u daarna door de aanvraag bij de rechtbank.</p></details>
+      <details><summary>Houd ik zelf nog iets te zeggen?<span class="pm">+</span></summary>
+        <p>Zeker. We werken altijd samen met u en houden rekening met uw wensen. U blijft betrokken en wordt bij elke belangrijke stap geïnformeerd.</p></details>
+    </div>
+  </div></section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec"><div class="wrap">
+    <div>
+      <h2>Zullen we <em>kennismaken</em>?</h2>
+      <p style="color:var(--muted); font-size:1.15rem; margin-top:1rem; max-width:34ch">Een eerste gesprek is gratis en vrijblijvend. We luisteren, denken mee en zeggen eerlijk wat we voor u kunnen doen.</p>
+    </div>
+    <div class="cinfo">
+      <a href="tel:+31703077605" class="big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg> 070 307 76 05</a>
+      <a href="mailto:info@cgbewindvoering.nl"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> info@cgbewindvoering.nl</a>
+      <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> J.C. van Markenlaan 3, Rijswijk</span>
+      <span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 8l8 5 8-5"/></svg> Postbus 16858, 2500 BW Den Haag</span>
+    </div>
+  </div></section>
+</main>
+
+<footer class="ft"><div class="wrap">
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <span class="wordmark">C<span class="amp">&amp;</span>G Bewindvoering</span>
+      <p>Beschermingsbewind, mentorschap en curatele met rust en richting. Voor grip op uw financiën en ruimte voor de rest.</p>
+    </div>
+    <div class="ft-col"><h4>Diensten</h4><a href="#diensten">Beschermingsbewind</a><a href="#diensten">Mentorschap</a><a href="#diensten">Curatele</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="tel:+31703077605">070 307 76 05</a><a href="mailto:info@cgbewindvoering.nl">info@cgbewindvoering.nl</a><span>J.C. van Markenlaan 3, Rijswijk</span></div>
+    <div class="ft-col"><h4>Goed geregeld</h4><span>KvK 62436589</span><span>Lid van Aegis</span><a href="#vragen">Veelgestelde vragen</a></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2026 C&amp;G Bewindvoering. Alle rechten voorbehouden.</span>
+    <span>Demo-ontwerp. Namen van de bewindvoerders en definitieve teksten nog in te vullen.</span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), n=document.getElementById('nav');
+  if(b&&n){
+    b.addEventListener('click',function(){var o=n.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});
+    n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open'); b.setAttribute('aria-expanded','false');}});
+  }
+})();
+</script>
+
+</html>

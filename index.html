@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>C&amp;G Bewindvoering — ontwerpvoorstellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f1ede4;--surface:#fffdf9;--ink:#182a22;--muted:#5c6b63;--pine:#1f4f3f;--apricot:#db8233;--line:#ddd6c6}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1713;--surface:#16211b;--ink:#eef3ec;--muted:#9fb1a6;--pine:#58c0a0;--apricot:#eaa558;--line:#273530}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+.wrap{width:100%;max-width:900px;margin-inline:auto;padding:clamp(28px,6vw,64px) clamp(18px,5vw,40px);flex:1}
+.lbl{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--pine)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,7vw,4rem);line-height:1.04;margin:.6rem 0 .8rem;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--pine)}
+.intro{color:var(--muted);font-size:1.12rem;max-width:52ch;margin-bottom:2.6rem}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+@media(max-width:640px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:.18s}
+.card:hover{transform:translateY(-3px);border-color:var(--pine)}
+.card .top{aspect-ratio:16/10;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.card.c1 .top{background:radial-gradient(circle at 60% 40%,#13807d,#0a4f4f)}
+.card.c2 .top{background:radial-gradient(circle at 40% 50%,#2d6b55,#182a22)}
+.card .top span{font-family:"Instrument Serif",serif;font-size:2.6rem;color:#f1ede4}
+.card .top span em{font-style:italic;color:var(--apricot)}
+.card .body{padding:1.4rem}
+.card h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:1.55rem;margin:0 0 .3rem}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.card .go{margin-top:1rem;font-weight:600;color:var(--pine);display:inline-flex;align-items:center;gap:.4rem}
+.note{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;max-width:60ch}
+footer{color:var(--muted);font-size:.82rem;padding:1.4rem clamp(18px,5vw,40px);border-top:1px solid var(--line);text-align:center}
+a{color:var(--pine)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="lbl">Ontwerpvoorstellen · oktober 2026</span>
+  <h1>Twee richtingen voor<br><em>C&amp;G Bewindvoering</em></h1>
+  <p class="intro">Hieronder twee complete ontwerpvoorstellen voor de nieuwe website. Bekijk beide rustig en laat weten welke richting het beste voelt. Beide openen gewoon in de browser, op elk apparaat.</p>
+  <div class="cards">
+    <a class="card c1" href="warm.html">
+      <div class="top"><span>Warm</span></div>
+      <div class="body">
+        <h2>Richting 1 — Warm &amp; menselijk</h2>
+        <p>Zacht, zorgzaam en toegankelijk. Ronde vormen, veel rust, teal en zand.</p>
+        <span class="go">Bekijk ontwerp →</span>
+      </div>
+    </a>
+    <a class="card c2" href="editorial.html">
+      <div class="top"><span>Editorial</span></div>
+      <div class="body">
+        <h2>Richting 2 — Editorial &amp; premium</h2>
+        <p>Zelfverzekerd en modern. Grote serif-typografie, dennengroen en apricot.</p>
+        <span class="go">Bekijk ontwerp →</span>
+      </div>
+    </a>
+  </div>
+  <p class="note">Dit zijn voorstellen ter beoordeling. Namen van de bewindvoerders en definitieve teksten worden later ingevuld. Nog geen officiële website op cgbewindvoering.nl.</p>
+</div>
+<footer>C&amp;G Bewindvoering · demo-ontwerp · gemaakt ter beoordeling</footer>
+</body>
+</html>

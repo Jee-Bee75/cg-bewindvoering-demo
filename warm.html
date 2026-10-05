@@ -1,0 +1,425 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>C&G Bewindvoering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: rustige eenkolom met ruime secties, zachte zand-grond, teal accent, ankers als motief */
+:root{
+  --bg:#f5efe6;        /* warm zand */
+  --surface:#fffdf9;   /* kaart, iets lichter */
+  --ink:#15272b;       /* diep inktgroen-zwart */
+  --muted:#4f6468;     /* gedempte tekst */
+  --teal:#0f6e6e;      /* hoofdaccent */
+  --teal-deep:#0a4f4f; /* hover/donker */
+  --sand-line:#e4d9c6; /* zachte lijnen */
+  --gold:#c88a3a;      /* warm tweede accent */
+  --focus:#0a4f4f;
+  color-scheme:light;
+  --maxw:1120px;
+  --r:18px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1a1c; --surface:#142427; --ink:#eaf3f1; --muted:#9fb4b4;
+  --teal:#48b7ac; --teal-deep:#6fcfc4; --sand-line:#24383a; --gold:#e0a55a; --focus:#6fcfc4;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e1a1c; --surface:#142427; --ink:#eaf3f1; --muted:#9fb4b4;
+  --teal:#48b7ac; --teal-deep:#6fcfc4; --sand-line:#24383a; --gold:#e0a55a; --focus:#6fcfc4;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px; line-height:1.65; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif; font-weight:500; line-height:1.12; text-wrap:balance; margin:0}
+p{margin:0}
+a{color:var(--teal-deep)}
+:focus-visible{outline:3px solid var(--focus); outline-offset:3px; border-radius:6px}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(16px,5vw,40px)}
+.eyebrow{font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--teal); margin-bottom:.6rem}
+
+/* header */
+.site-header{position:sticky; top:env(safe-area-inset-top,0px); z-index:30;
+  background:color-mix(in srgb,var(--bg) 88%, transparent); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--sand-line)}
+.bar{display:flex; align-items:center; gap:1.5rem; min-height:70px}
+.brand{display:flex; align-items:center; gap:.6rem; font-family:"Fraunces",serif; font-size:1.3rem; font-weight:600; color:var(--ink); text-decoration:none; margin-right:auto}
+.brand svg{flex:0 0 auto}
+.nav{display:flex; gap:1.4rem; align-items:center}
+.nav a{color:var(--muted); text-decoration:none; font-weight:500; font-size:.98rem}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:600; font-size:1rem;
+  padding:.72rem 1.3rem; border-radius:999px; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:.15s}
+.btn-primary{background:var(--teal); color:#fff}
+.btn-primary:hover{background:var(--teal-deep)}
+.btn-ghost{background:transparent; color:var(--teal-deep); border-color:var(--teal)}
+.btn-ghost:hover{background:color-mix(in srgb,var(--teal) 12%,transparent)}
+.menu-toggle{display:none; background:none; border:0; color:var(--ink); padding:.4rem; cursor:pointer}
+@media(max-width:860px){
+  .nav{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+    background:var(--surface); border-bottom:1px solid var(--sand-line); padding:.5rem clamp(16px,5vw,40px) 1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.7rem 0; border-bottom:1px solid var(--sand-line)}
+  .nav .btn{margin-top:.7rem; justify-content:center}
+  .menu-toggle{display:inline-flex}
+}
+
+/* hero */
+.hero{position:relative; overflow:hidden}
+.hero .wrap{padding-block:clamp(3rem,8vw,6rem); display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr; gap:2rem}}
+.hero h1{font-size:clamp(2.3rem,5.5vw,3.9rem); margin-bottom:1.2rem}
+.hero .lead{font-size:1.2rem; color:var(--muted); max-width:34ch; margin-bottom:1.8rem}
+.hero-cta{display:flex; gap:.9rem; flex-wrap:wrap}
+.hero-trust{margin-top:2rem; font-size:.92rem; color:var(--muted)}
+.hero-art{position:relative; aspect-ratio:1/1; max-width:420px; margin-inline:auto; width:100%}
+.hero-art svg{width:100%; height:100%}
+
+/* trust strip */
+.trust{background:var(--surface); border-block:1px solid var(--sand-line)}
+.trust .wrap{display:flex; flex-wrap:wrap; gap:1rem 2.5rem; padding-block:1.3rem; align-items:center; justify-content:center}
+.trust-item{display:flex; align-items:center; gap:.6rem; font-weight:500; font-size:.95rem; color:var(--muted)}
+.trust-item strong{color:var(--ink); font-variant-numeric:tabular-nums}
+.trust-item svg{color:var(--teal); flex:0 0 auto}
+
+/* generic section */
+section{scroll-margin-top:90px}
+.section{padding-block:clamp(3rem,7vw,5.5rem)}
+.section-head{max-width:40ch; margin-bottom:2.6rem}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:.8rem}
+.section-head p{color:var(--muted); font-size:1.08rem}
+
+/* service cards */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface); border:1px solid var(--sand-line); border-radius:var(--r); padding:1.8rem; display:flex; flex-direction:column; gap:.8rem; min-width:0}
+.card .ico{width:54px; height:54px; border-radius:14px; background:color-mix(in srgb,var(--teal) 14%,transparent);
+  display:grid; place-items:center; color:var(--teal); margin-bottom:.4rem}
+.card h3{font-size:1.35rem}
+.card p{color:var(--muted); font-size:1rem}
+.card .more{margin-top:auto; color:var(--teal-deep); font-weight:600; text-decoration:none; font-size:.98rem; display:inline-flex; align-items:center; gap:.35rem}
+.card .more:hover{gap:.6rem}
+
+/* steps */
+.steps{background:var(--surface); border-block:1px solid var(--sand-line)}
+.steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; counter-reset:step}
+@media(max-width:860px){.steps-grid{grid-template-columns:1fr}}
+.step{position:relative; padding-top:.5rem}
+.step .num{font-family:"Fraunces",serif; font-size:2.4rem; color:var(--gold); font-weight:600; line-height:1}
+.step h3{font-size:1.2rem; margin:.6rem 0 .4rem}
+.step p{color:var(--muted); font-size:1rem}
+
+/* two audiences */
+.audience{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem}
+@media(max-width:760px){.audience{grid-template-columns:1fr}}
+.aud{border-radius:var(--r); padding:2rem; min-width:0}
+.aud.you{background:color-mix(in srgb,var(--teal) 10%,var(--surface)); border:1px solid var(--sand-line)}
+.aud.ref{background:var(--surface); border:1px solid var(--sand-line)}
+.aud h3{font-size:1.5rem; margin-bottom:.8rem}
+.aud ul{margin:0; padding-left:1.1rem; color:var(--muted)}
+.aud li{margin-bottom:.5rem}
+
+/* faq */
+.faq{max-width:760px; margin-inline:auto}
+details{background:var(--surface); border:1px solid var(--sand-line); border-radius:14px; padding:0 1.3rem; margin-bottom:.8rem}
+summary{cursor:pointer; list-style:none; padding:1.1rem 0; font-weight:600; font-size:1.08rem; display:flex; justify-content:space-between; align-items:center; gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary .chev{transition:.2s; flex:0 0 auto; color:var(--teal)}
+details[open] summary .chev{transform:rotate(180deg)}
+details p{color:var(--muted); padding-bottom:1.2rem}
+
+/* contact */
+.contact{background:var(--teal); color:#fff; border-radius:var(--r); padding:clamp(2rem,5vw,3.2rem); display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; align-items:center}
+:root[data-theme="dark"] .contact, :root:not([data-theme="light"]) .contact{color:#07211f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact{color:#07211f}}
+@media(max-width:760px){.contact{grid-template-columns:1fr; gap:1.6rem}}
+.contact h2{font-size:clamp(1.8rem,4vw,2.5rem); color:inherit; margin-bottom:.7rem}
+.contact p{opacity:.9}
+.contact-info{display:flex; flex-direction:column; gap:.9rem}
+.ci{display:flex; align-items:center; gap:.7rem; font-size:1.05rem; font-weight:500}
+.ci svg{flex:0 0 auto; opacity:.85}
+.ci a{color:inherit; text-decoration:underline; text-underline-offset:3px}
+.btn-onteal{background:#fff; color:var(--teal-deep)}
+.btn-onteal:hover{background:#f0ebe1}
+
+/* footer */
+.site-footer{padding-block:3rem 2.5rem; border-top:1px solid var(--sand-line); margin-top:1rem}
+.foot-grid{display:flex; flex-wrap:wrap; gap:2rem 3rem; justify-content:space-between}
+.foot-brand{max-width:30ch}
+.foot-brand p{color:var(--muted); font-size:.95rem; margin-top:.7rem}
+.foot-col h4{font-size:.85rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 0 .8rem}
+.foot-col a, .foot-col span{display:block; color:var(--ink); text-decoration:none; font-size:.98rem; margin-bottom:.5rem; opacity:.85}
+.foot-col a:hover{opacity:1; color:var(--teal-deep)}
+.copyright{margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--sand-line); color:var(--muted); font-size:.88rem; display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between}
+.note{font-size:.8rem; color:var(--muted); opacity:.8}
+@media(prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="C&amp;G Bewindvoering, naar boven">
+      <!-- anker-monogram -->
+      <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" stroke="var(--teal)" stroke-width="2.5"/>
+        <circle cx="24" cy="13" r="3.4" stroke="var(--teal)" stroke-width="2.5"/>
+        <path d="M24 16.5V37" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M17 22h14" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M12 28c0 6.6 5.4 11 12 11s12-4.4 12-11" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M12 28l-3 2.5M36 28l3 2.5" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>C&amp;G <span style="color:var(--teal)">Bewindvoering</span></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#diensten">Diensten</a>
+      <a href="#werkwijze">Zo werkt het</a>
+      <a href="#voor-wie">Voor wie</a>
+      <a href="#vragen">Vragen</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#contact">Aanmelden</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Beschermingsbewind · Mentorschap · Curatele</p>
+        <h1>Rust in uw geldzaken, stap voor stap.</h1>
+        <p class="lead">Even het overzicht kwijt in uw financiën? Wij nemen het beheer uit handen en brengen uw situatie terug in rustig vaarwater. Dichtbij, menselijk en betrouwbaar.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Meld u aan
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#contact">Gratis kennismaken</a>
+        </div>
+        <p class="hero-trust">Aangesloten bij Aegis · werkzaam in Den Haag, Rijswijk en omstreken</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--teal)"/><stop offset="1" stop-color="var(--teal-deep)"/>
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="200" r="180" fill="color-mix(in srgb,var(--teal) 10%,transparent)"/>
+          <circle cx="200" cy="200" r="130" fill="color-mix(in srgb,var(--gold) 12%,transparent)"/>
+          <!-- groot anker -->
+          <circle cx="200" cy="96" r="20" stroke="url(#g1)" stroke-width="10"/>
+          <path d="M200 112v170" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+          <path d="M160 150h80" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+          <path d="M110 220c0 55 42 95 90 95s90-40 90-95" stroke="var(--gold)" stroke-width="12" stroke-linecap="round"/>
+          <path d="M110 220l-22 16M290 220l22 16" stroke="var(--gold)" stroke-width="12" stroke-linecap="round"/>
+          <!-- golfjes -->
+          <path d="M70 330c20-14 40-14 60 0s40 14 60 0 40-14 60 0 40 14 60 0" stroke="var(--teal)" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="wrap">
+      <span class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg> Aangesloten bij <strong>Aegis</strong></span>
+      <span class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg> KvK <strong>62436589</strong></span>
+      <span class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Al sinds <strong>2015</strong></span>
+      <span class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> <strong>Rijswijk</strong> &amp; Den Haag</span>
+    </div>
+  </div>
+
+  <!-- DIENSTEN -->
+  <section id="diensten" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Onze diensten</p>
+        <h2>Hulp die bij uw situatie past</h2>
+        <p>Van tijdelijke ondersteuning bij uw financiën tot volledige vertegenwoordiging. Samen kijken we wat u nodig heeft.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 9v10h14V9"/><path d="M9 19v-6h6v6"/></svg></span>
+          <h3>Beschermingsbewind</h3>
+          <p>Wij beheren uw inkomsten en uitgaven, betalen uw vaste lasten op tijd en brengen rust in uw administratie. U houdt zicht, wij houden de touwtjes vast.</p>
+          <a class="more" href="#contact">Meer weten
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card">
+          <span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+          <h3>Mentorschap</h3>
+          <p>Lukt het niet meer om zelf beslissingen te nemen over zorg en welzijn? Als mentor sta ik naast u en behartig uw persoonlijke belangen met respect voor uw wensen.</p>
+          <a class="more" href="#contact">Meer weten
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card">
+          <span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l7-4 7 4"/><path d="M5 7l-2 6a4 4 0 008 0L9 7M19 7l-2 6a4 4 0 008 0l-2-6" transform="translate(-2,0)"/></svg></span>
+          <h3>Curatele</h3>
+          <p>De meest volledige vorm van bescherming, voor zowel financiële als persoonlijke zaken. Wij nemen de verantwoordelijkheid uit handen wanneer dat echt nodig is.</p>
+          <a class="more" href="#contact">Meer weten
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE -->
+  <div id="werkwijze" class="steps">
+    <div class="wrap section">
+      <div class="section-head">
+        <p class="eyebrow">Zo werkt het</p>
+        <h2>In drie stappen geregeld</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><div class="num">1</div><h3>U meldt zich aan</h3><p>Via het formulier, de telefoon of een verwijzer. Een eerste gesprek is altijd gratis en vrijblijvend.</p></div>
+        <div class="step"><div class="num">2</div><h3>We maken kennis</h3><p>We brengen uw situatie rustig in kaart en leggen uit wat bewind, mentorschap of curatele voor u betekent.</p></div>
+        <div class="step"><div class="num">3</div><h3>Wij regelen het</h3><p>Na goedkeuring van de rechter nemen wij het beheer over. U wordt elke stap op de hoogte gehouden.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOOR WIE -->
+  <section id="voor-wie" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Voor wie</p>
+        <h2>Voor u en voor wie u verwijst</h2>
+      </div>
+      <div class="audience">
+        <div class="aud you">
+          <h3>Voor u of een naaste</h3>
+          <ul>
+            <li>Post en rekeningen stapelen zich op</li>
+            <li>Schulden die u niet meer overziet</li>
+            <li>Ziekte, beperking of ouderdom maakt beheer te zwaar</li>
+            <li>U wilt weer rust en grip op uw geld</li>
+          </ul>
+        </div>
+        <div class="aud ref">
+          <h3>Voor verwijzers</h3>
+          <ul>
+            <li>Gemeenten, hulpverleners en zorginstellingen</li>
+            <li>Korte lijnen en snelle terugkoppeling</li>
+            <li>Heldere rapportage volgens de Aegis-normen</li>
+            <li>Aanmelden kan rechtstreeks via contact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VRAGEN -->
+  <section id="vragen" class="section" style="background:var(--surface); border-block:1px solid var(--sand-line)">
+    <div class="wrap">
+      <div class="section-head" style="margin-inline:auto; text-align:center">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Goed om te weten</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Wat is het verschil tussen bewind, mentorschap en curatele?
+            <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p>Bij beschermingsbewind beheren wij uw geld en goederen. Bij mentorschap nemen wij beslissingen over zorg en welzijn. Curatele combineert beide en is de meest vergaande vorm. In een kennismaking leggen we uit wat bij uw situatie past.</p>
+        </details>
+        <details>
+          <summary>Wat kost bewindvoering?
+            <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p>De tarieven zijn wettelijk vastgesteld door de overheid. Heeft u een laag inkomen? Dan vergoedt de gemeente de kosten vaak via de bijzondere bijstand. We bespreken dit vooraf, zonder verrassingen.</p>
+        </details>
+        <details>
+          <summary>Hoe meld ik mij of iemand anders aan?
+            <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p>Neem contact op via de telefoon of het formulier hieronder. We plannen een gratis kennismaking en begeleiden u daarna door de aanvraag bij de rechtbank.</p>
+        </details>
+        <details>
+          <summary>Houd ik zelf nog iets te zeggen?
+            <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p>Zeker. We werken altijd samen met u en houden rekening met uw wensen. U blijft betrokken en wordt bij elke belangrijke stap geïnformeerd.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Zullen we kennismaken?</h2>
+          <p>Een eerste gesprek is gratis en vrijblijvend. We luisteren, denken mee en zeggen eerlijk wat we voor u kunnen doen.</p>
+          <div style="margin-top:1.4rem"><a class="btn btn-onteal" href="tel:+31703077605">Bel 070 307 76 05</a></div>
+        </div>
+        <div class="contact-info">
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg> <a href="tel:+31703077605">070 307 76 05</a></span>
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@cgbewindvoering.nl">info@cgbewindvoering.nl</a></span>
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> J.C. van Markenlaan 3, Rijswijk</span>
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM4 8l8 6 8-6"/><rect x="4" y="8" width="16" height="12" rx="1"/></svg> Postbus 16858, 2500 BW Den Haag</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" style="font-size:1.2rem">
+          <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" stroke="var(--teal)" stroke-width="2.5"/>
+            <circle cx="24" cy="13" r="3.4" stroke="var(--teal)" stroke-width="2.5"/>
+            <path d="M24 16.5V37" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M17 22h14" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 28c0 6.6 5.4 11 12 11s12-4.4 12-11" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 28l-3 2.5M36 28l3 2.5" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span>C&amp;G Bewindvoering</span>
+        </a>
+        <p>Beschermingsbewind, mentorschap en curatele met een menselijk gezicht. Voor rust en grip op uw financiën.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Diensten</h4>
+        <a href="#diensten">Beschermingsbewind</a>
+        <a href="#diensten">Mentorschap</a>
+        <a href="#diensten">Curatele</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+31703077605">070 307 76 05</a>
+        <a href="mailto:info@cgbewindvoering.nl">info@cgbewindvoering.nl</a>
+        <span>J.C. van Markenlaan 3, Rijswijk</span>
+      </div>
+      <div class="foot-col">
+        <h4>Goed geregeld</h4>
+        <span>KvK 62436589</span>
+        <span>Lid van Aegis</span>
+        <a href="#vragen">Veelgestelde vragen</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 C&amp;G Bewindvoering. Alle rechten voorbehouden.</span>
+      <span class="note">Demo-ontwerp. Namen van de bewindvoerders en definitieve teksten nog in te vullen.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.menu-toggle'), n=document.getElementById('nav');
+  if(t&&n){t.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+  n.addEventListener('click',function(e){ if(e.target.tagName==='A'){n.classList.remove('open'); t.setAttribute('aria-expanded','false');}});
+  }
+})();
+</script>
+
+</html>
