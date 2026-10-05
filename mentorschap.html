@@ -1,0 +1,420 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Mentorschap Haaglanden</title>
+<meta name="description" content="Mentor nodig in Haaglanden? Mentorschap Haaglanden behartigt met zorg de persoonlijke belangen van mensen die kwetsbaar zijn. Vrijblijvend kennismaken in Den Haag en omgeving.">
+<meta name="robots" content="index,follow">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mentorschap Haaglanden">
+<meta property="og:title" content="Mentorschap Haaglanden — een mentor die naast u staat">
+<meta property="og:description" content="Professioneel mentorschap voor mensen in een kwetsbare situatie in Den Haag en Haaglanden. Door de rechter benoemd, met aandacht en respect.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"LocalBusiness","@id":"https://mentorschaphaaglanden.nl/#org","name":"Mentorschap Haaglanden","description":"Professioneel mentorschap voor mensen in een kwetsbare situatie in Den Haag en de regio Haaglanden.","email":"info@mentorschaphaaglanden.nl","url":"https://mentorschaphaaglanden.nl/","areaServed":["Den Haag","Rijswijk","Zoetermeer","Leidschendam-Voorburg","Haaglanden"],"vatID":"","identifier":{"@type":"PropertyValue","name":"KvK","value":"98002252"}},
+ {"@type":"Service","serviceType":"Mentorschap","provider":{"@id":"https://mentorschaphaaglanden.nl/#org"},"areaServed":"Haaglanden","description":"Een door de kantonrechter benoemde mentor neemt beslissingen over zorg, verzorging, verpleging, behandeling en begeleiding, samen met en in het belang van de betrokkene."},
+ {"@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"Wat is mentorschap?","acceptedAnswer":{"@type":"Answer","text":"Mentorschap is een wettelijke maatregel voor mensen die door ziekte of een beperking niet goed zelf kunnen beslissen over hun zorg en welzijn. De kantonrechter benoemt een mentor die deze beslissingen samen met en voor de betrokkene neemt."}},
+   {"@type":"Question","name":"Voor wie is mentorschap bedoeld?","acceptedAnswer":{"@type":"Answer","text":"Voor mensen in een kwetsbare situatie die intensieve zorg nodig hebben en zelf niet goed keuzes kunnen maken over verzorging, verpleging, behandeling of begeleiding, en die niemand in hun omgeving hebben die dit kan doen."}},
+   {"@type":"Question","name":"Wat kost mentorschap?","acceptedAnswer":{"@type":"Answer","text":"De kosten voor mentorschap worden jaarlijks wettelijk vastgesteld door de overheid. Bij een laag inkomen vergoedt de gemeente de kosten vaak via de bijzondere bijstand."}},
+   {"@type":"Question","name":"Hoe vraag ik een mentor aan in Haaglanden?","acceptedAnswer":{"@type":"Answer","text":"Neem contact op via info@mentorschaphaaglanden.nl of het aanmeldformulier. Na een vrijblijvende kennismaking begeleiden wij de aanvraag bij de kantonrechter."}}
+ ]}
+]}
+</script>
+<style>
+/* Layout: warm, menselijk, hoopvol — crème grond, diep aubergine-inkt, koraal CTA, blad-groen als groei-accent; ronde friendly vormen, bloei-motief */
+:root{
+  --bg:#fbf5ee;        /* warme crème */
+  --surface:#ffffff;
+  --ink:#2a1f2d;       /* diep aubergine-inkt */
+  --muted:#6b5f66;
+  --coral:#ef5f48;     /* warme CTA, hoop */
+  --coral-deep:#d94a34;
+  --leaf:#3f7d5e;      /* groei-groen */
+  --blush:#f7e3dc;     /* zachte vlak-tint */
+  --line:#ece0d4;
+  color-scheme:light;
+  --maxw:1160px; --r:20px;
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1419; --surface:#241c23; --ink:#f3ebe8; --muted:#b4a6ac;
+  --coral:#ff7a63; --coral-deep:#ff9480; --leaf:#6fc49b; --blush:#33232c; --line:#352a32; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#1a1419; --surface:#241c23; --ink:#f3ebe8; --muted:#b4a6ac;
+  --coral:#ff7a63; --coral-deep:#ff9480; --leaf:#6fc49b; --blush:#33232c; --line:#352a32; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.65; margin:0; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-family:var(--disp); font-weight:600; line-height:1.08; text-wrap:balance; letter-spacing:-.015em}
+p{margin:0}
+a{color:var(--coral-deep)}
+:focus-visible{outline:3px solid var(--leaf); outline-offset:3px; border-radius:6px}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(18px,5vw,48px)}
+.lbl{font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--leaf)}
+
+/* header */
+.hd{position:sticky; top:env(safe-area-inset-top,0px); z-index:40; background:color-mix(in srgb,var(--bg) 90%,transparent); backdrop-filter:blur(9px); border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex; align-items:center; gap:1.6rem; min-height:74px}
+.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--ink); margin-right:auto; font-family:var(--disp); font-weight:700; font-size:1.2rem; letter-spacing:-.02em}
+.brand svg{flex:0 0 auto}
+.nav{display:flex; align-items:center; gap:1.5rem}
+.nav a{text-decoration:none; color:var(--muted); font-weight:500; font-size:.97rem}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:600; font-size:1rem; padding:.72rem 1.35rem; border-radius:999px; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:.15s}
+.btn-primary{background:var(--coral); color:#fff}
+.btn-primary:hover{background:var(--coral-deep)}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--ink)}
+.burger{display:none; background:none; border:0; color:var(--ink); cursor:pointer; padding:.3rem}
+@media(max-width:860px){
+  .nav{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; background:var(--surface); border-bottom:1px solid var(--line); padding:.4rem clamp(18px,5vw,48px) 1.1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.75rem 0; border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:.8rem; justify-content:center}
+  .burger{display:inline-flex}
+}
+
+/* hero */
+.hero{position:relative; overflow:hidden}
+.hero .wrap{padding-block:clamp(2.8rem,7vw,5.5rem); display:grid; grid-template-columns:1.08fr .92fr; gap:3rem; align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr; gap:2.2rem}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem); margin:1rem 0 1.1rem}
+.hero h1 .hl{color:var(--coral); position:relative; white-space:nowrap}
+.hero .lead{font-size:1.2rem; color:var(--muted); max-width:36ch; margin-bottom:1.9rem}
+.hero-cta{display:flex; gap:.9rem; flex-wrap:wrap}
+.hero-trust{margin-top:1.8rem; font-size:.92rem; color:var(--muted); display:flex; align-items:center; gap:.5rem}
+.hero-art{position:relative; max-width:460px; width:100%; margin-inline:auto}
+.hero-art img{width:100%; height:auto; aspect-ratio:9/11; object-fit:cover; border-radius:26px; display:block; box-shadow:0 18px 50px -20px rgba(42,31,45,.4)}
+.hero-art .leaf{position:absolute; right:-14px; bottom:-14px; width:84px; height:84px; background:var(--leaf); border-radius:50%; display:grid; place-items:center; box-shadow:0 10px 24px -10px rgba(63,125,94,.6)}
+@media(max-width:860px){.hero-art{max-width:380px}}
+
+/* trust strip */
+.trust{background:var(--blush); border-block:1px solid var(--line)}
+.trust .wrap{display:flex; flex-wrap:wrap; gap:1rem 2.6rem; padding-block:1.3rem; align-items:center; justify-content:center}
+.ti{display:flex; align-items:center; gap:.6rem; font-weight:500; font-size:.95rem; color:var(--muted)}
+.ti strong{color:var(--ink); font-variant-numeric:tabular-nums}
+.ti svg{color:var(--leaf); flex:0 0 auto}
+
+section{scroll-margin-top:92px}
+.sec{padding-block:clamp(3.4rem,7vw,5.8rem)}
+.sec-head{max-width:46ch; margin-bottom:2.8rem}
+.sec-head.center{margin-inline:auto; text-align:center}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3rem); margin:.6rem 0 .8rem}
+.sec-head p{color:var(--muted); font-size:1.1rem}
+
+/* wat is / uitleg met bloei */
+.explain{display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center}
+@media(max-width:820px){.explain{grid-template-columns:1fr; gap:2rem}}
+.explain .body p{color:var(--muted); font-size:1.08rem; margin-bottom:1rem; max-width:50ch}
+.explain .body p strong{color:var(--ink)}
+.quote-card{background:var(--ink); color:var(--bg); border-radius:var(--r); padding:clamp(1.8rem,4vw,2.6rem); font-family:var(--disp); font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2; font-weight:500}
+.quote-card .em{color:var(--coral)}
+:root[data-theme="dark"] .quote-card .em,:root:not([data-theme="light"]) .quote-card .em{color:#ff9480}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .quote-card .em{color:#ff9480}}
+.quote-card .src{display:block; font-family:var(--sans); font-size:.9rem; font-weight:500; margin-top:1.2rem; opacity:.7}
+.explain .shot{width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r); display:block; box-shadow:0 14px 40px -22px rgba(42,31,45,.4)}
+
+/* beeldband met quote */
+.photoband{position:relative; min-height:clamp(300px,42vw,440px); display:grid; align-items:center; overflow:hidden}
+.photoband img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.photoband .veil{position:absolute; inset:0; background:linear-gradient(90deg,rgba(42,31,45,.82),rgba(42,31,45,.45) 60%,rgba(42,31,45,.2))}
+.photoband .wrap{position:relative; padding-block:clamp(2.6rem,6vw,4rem)}
+.photoband q{quotes:none; display:block; font-family:var(--disp); font-weight:600; color:#fff; font-size:clamp(1.7rem,4vw,3rem); line-height:1.12; max-width:20ch; letter-spacing:-.015em}
+.photoband q .em{color:#ffb9ab}
+.photoband .src{display:block; margin-top:1.4rem; color:rgba(255,255,255,.82); font-size:.95rem; font-weight:500}
+
+/* diensten / taken cards */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:1.8rem; display:flex; flex-direction:column; gap:.7rem; min-width:0}
+.card .ico{width:52px; height:52px; border-radius:15px; background:color-mix(in srgb,var(--leaf) 15%,transparent); display:grid; place-items:center; color:var(--leaf); margin-bottom:.3rem}
+.card h3{font-size:1.3rem}
+.card p{color:var(--muted); font-size:1rem}
+
+/* voor wie */
+.forwho{background:var(--blush); border-block:1px solid var(--line)}
+.fw-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.3rem}
+@media(max-width:760px){.fw-grid{grid-template-columns:1fr}}
+.fw{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:1.9rem}
+.fw h3{font-size:1.4rem; margin-bottom:1rem; display:flex; align-items:center; gap:.6rem}
+.fw h3 svg{color:var(--coral)}
+.fw ul{list-style:none; margin:0; padding:0}
+.fw li{padding:.6rem 0; border-bottom:1px solid var(--line); display:flex; gap:.6rem; align-items:flex-start; color:var(--muted)}
+.fw li:last-child{border-bottom:0}
+.fw li svg{flex:0 0 auto; margin-top:4px; color:var(--leaf)}
+
+/* werkwijze */
+.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:1.3rem; counter-reset:s}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{position:relative}
+.step .n{width:46px; height:46px; border-radius:50%; background:var(--coral); color:#fff; display:grid; place-items:center; font-family:var(--disp); font-weight:700; font-size:1.3rem; margin-bottom:.9rem}
+.step h3{font-size:1.15rem; margin-bottom:.4rem}
+.step p{color:var(--muted); font-size:.98rem}
+
+/* kosten callout */
+.kosten{background:var(--leaf); color:#fff; border-radius:var(--r); padding:clamp(1.8rem,4vw,2.8rem); display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center}
+:root[data-theme="dark"] .kosten,:root:not([data-theme="light"]) .kosten{color:#06231a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .kosten{color:#06231a}}
+@media(max-width:720px){.kosten{grid-template-columns:1fr; gap:1.3rem}}
+.kosten h2{color:inherit; font-size:clamp(1.6rem,3.5vw,2.3rem); margin-bottom:.6rem}
+.kosten p{opacity:.92; max-width:48ch}
+.btn-onleaf{background:#fff; color:var(--leaf); border-color:#fff}
+.btn-onleaf:hover{background:var(--bg)}
+
+/* faq */
+.faq{max-width:780px; margin-inline:auto}
+details{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:0 1.4rem; margin-bottom:.8rem}
+summary{cursor:pointer; list-style:none; padding:1.15rem 0; font-weight:600; font-size:1.1rem; font-family:var(--disp); display:flex; justify-content:space-between; gap:1rem; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .pm{color:var(--coral); font-size:1.5rem; line-height:1; transition:.2s; flex:0 0 auto}
+details[open] summary .pm{transform:rotate(45deg)}
+details p{color:var(--muted); padding-bottom:1.3rem}
+
+/* contact */
+.contact .inner{background:var(--ink); color:var(--bg); border-radius:var(--r); padding:clamp(2rem,5vw,3.4rem); display:grid; grid-template-columns:260px 1.1fr 1fr; gap:2.6rem; align-items:center}
+.contact .photo{width:100%; height:100%; min-height:240px; object-fit:cover; border-radius:16px; display:block}
+@media(max-width:920px){.contact .inner{grid-template-columns:1fr 1fr; gap:2rem} .contact .photo{display:none}}
+@media(max-width:760px){.contact .inner{grid-template-columns:1fr; gap:1.8rem}}
+.contact h2{color:inherit; font-size:clamp(2rem,4.5vw,3rem); margin-bottom:.7rem}
+.contact h2 .em{color:var(--coral)}
+:root[data-theme="dark"] .contact h2 .em,:root:not([data-theme="light"]) .contact h2 .em{color:#ff9480}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact h2 .em{color:#ff9480}}
+.contact p{opacity:.85}
+.cinfo{display:flex; flex-direction:column; gap:.3rem}
+.ci{display:flex; align-items:center; gap:.8rem; padding:.7rem 0; font-size:1.05rem; font-weight:500}
+.ci svg{flex:0 0 auto; opacity:.8}
+.ci a{color:inherit; text-decoration:underline; text-underline-offset:3px}
+
+/* footer */
+.ft{padding-block:3rem 2.4rem; border-top:1px solid var(--line)}
+.ft-grid{display:flex; flex-wrap:wrap; gap:2rem 3.5rem; justify-content:space-between}
+.ft-brand{max-width:32ch}
+.ft-brand p{color:var(--muted); font-size:.95rem; margin-top:.7rem}
+.ft-col h4{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 .8rem}
+.ft-col a,.ft-col span{display:block; color:var(--ink); text-decoration:none; font-size:.97rem; margin-bottom:.5rem; opacity:.85}
+.ft-col a:hover{opacity:1; color:var(--coral-deep)}
+.ft-bot{margin-top:2.4rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<!-- logo-motief: twee handen die een opbloeiend blad dragen (groei + zorg) -->
+<header class="hd"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Mentorschap Haaglanden, naar boven">
+    <svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 26c0-7 4-12 10-13-1 7-4 12-10 13z" fill="var(--leaf)"/>
+      <path d="M24 26c0-6-3.5-10.5-9-11.5C16 20 19.5 25 24 26z" fill="color-mix(in srgb,var(--leaf) 60%,var(--bg))"/>
+      <path d="M24 26v9" stroke="var(--leaf)" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M11 33c3.5 5 8 7 13 7s9.5-2 13-7" stroke="var(--coral)" stroke-width="2.8" stroke-linecap="round"/>
+    </svg>
+    <span>Mentorschap&nbsp;Haaglanden</span>
+  </a>
+  <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <nav class="nav" id="nav">
+    <a href="#wat">Wat is mentorschap</a>
+    <a href="#voor-wie">Voor wie</a>
+    <a href="#werkwijze">Werkwijze</a>
+    <a href="#vragen">Vragen</a>
+    <a class="btn btn-primary" href="#contact">Mentor aanvragen</a>
+  </nav>
+</div></header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero"><div class="wrap">
+    <div>
+      <span class="lbl">Mentorschap in Den Haag &amp; Haaglanden</span>
+      <h1>Een mentor die <span class="hl">naast u staat</span>.</h1>
+      <p class="lead">Wanneer zelf beslissen over zorg en welzijn niet meer lukt, behartigen wij uw persoonlijke belangen. Met aandacht, geduld en respect voor wie u bent.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Vrijblijvend kennismaken
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#wat">Wat is mentorschap?</a>
+      </div>
+      <p class="hero-trust"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--leaf)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Door de kantonrechter benoemd · werkzaam in heel Haaglanden</p>
+    </div>
+    <div class="hero-art">
+      <img src="img/hero.jpg" alt="Mentor en oudere mevrouw kijken samen glimlachend naar een foto, met aandacht en warmte." width="900" height="1080" fetchpriority="high">
+      <span class="leaf" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+          <path d="M24 30c0-9 5-15 13-16-1 9-5 15-13 16z" fill="#fff"/>
+          <path d="M24 30v8" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </div>
+  </div></section>
+
+  <!-- TRUST -->
+  <div class="trust"><div class="wrap">
+    <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/></svg> Wettelijk geregeld</span>
+    <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg> KvK <strong>98002252</strong></span>
+    <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> Den Haag &amp; omstreken</span>
+    <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg> Persoonlijk contact</span>
+  </div></div>
+
+  <!-- WAT IS -->
+  <section id="wat" class="sec"><div class="wrap">
+    <div class="explain">
+      <div class="body">
+        <span class="lbl">Wat is mentorschap</span>
+        <h2 style="font-size:clamp(2rem,4.6vw,3rem); margin:.6rem 0 1.2rem">Beslissen over zorg, samen met u</h2>
+        <p>Mentorschap is een <strong>wettelijke maatregel</strong> voor mensen die door ziekte of een beperking niet goed zelf kunnen beslissen over hun zorg en welzijn. Denk aan keuzes over verzorging, verpleging, behandeling of begeleiding.</p>
+        <p>De <strong>kantonrechter</strong> benoemt een mentor. Die neemt beslissingen niet óver u, maar <strong>samen met u</strong> en altijd in uw belang. Zo houdt u een stem, ook als het zelf even niet lukt.</p>
+      </div>
+      <img class="shot" src="img/listen.jpg" alt="Twee mannen in gesprek buiten, een oudere man lacht warm tijdens een persoonlijk gesprek." width="820" height="620" loading="lazy">
+    </div>
+  </div></section>
+
+  <!-- BEELDBAND MET QUOTE -->
+  <div class="photoband">
+    <img src="img/band.jpg" alt="Een begeleider houdt met beide handen de hand vast van een oudere persoon in een rolstoel." width="1600" height="560" loading="lazy">
+    <span class="veil" aria-hidden="true"></span>
+    <div class="wrap">
+      <q>Laten we samen uw potentieel <span class="em">tot bloei</span> brengen.</q>
+      <span class="src">— Mentorschap Haaglanden</span>
+    </div>
+  </div>
+
+  <!-- TAKEN -->
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Wat doet een mentor</span>
+      <h2>Uw belangen in goede handen</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><path d="M9 11l2 2 4-4"/></svg></span>
+        <h3>Zorg &amp; behandeling</h3>
+        <p>Meebeslissen over verzorging, verpleging en behandeling, zodat de zorg past bij uw wensen en situatie.</p>
+      </article>
+      <article class="card">
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13A4 4 0 0116 11"/></svg></span>
+        <h3>Contact met hulpverleners</h3>
+        <p>Wij overleggen met artsen, instellingen en begeleiders en houden het overzicht, zodat u dat niet alleen hoeft te doen.</p>
+      </article>
+      <article class="card">
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></span>
+        <h3>Uw stem laten horen</h3>
+        <p>We luisteren naar wat u belangrijk vindt en brengen dat in, ook bij lastige beslissingen over uw welzijn.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <!-- VOOR WIE -->
+  <section id="voor-wie" class="forwho"><div class="wrap sec">
+    <div class="sec-head"><span class="lbl">Voor wie</span><h2>Mentorschap, voor u of voor wie u verwijst</h2></div>
+    <div class="fw-grid">
+      <div class="fw">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg> Voor u of een naaste</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Door ziekte of een beperking lukt zelf beslissen niet meer</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Behoefte aan intensieve zorg en begeleiding</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Geen familie of naaste die dit op zich kan nemen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Behoefte aan iemand die onafhankelijk uw belang bewaakt</li>
+        </ul>
+      </div>
+      <div class="fw">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg> Voor verwijzers</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Zorginstellingen, hulpverleners en gemeenten</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Korte lijnen en snelle terugkoppeling</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Werkzaam in heel de regio Haaglanden</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg> Aanmelden kan rechtstreeks via het contactformulier</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- WERKWIJZE -->
+  <section id="werkwijze" class="sec"><div class="wrap">
+    <div class="sec-head"><span class="lbl">Zo werkt het</span><h2>Van aanmelding tot benoeming</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Aanmelden</h3><p>U neemt contact op via het formulier of per e-mail. Vrijblijvend en zonder kosten.</p></div>
+      <div class="step"><div class="n">2</div><h3>Kennismaken</h3><p>We luisteren naar uw situatie en leggen rustig uit wat mentorschap voor u betekent.</p></div>
+      <div class="step"><div class="n">3</div><h3>Aanvraag rechter</h3><p>Wij verzorgen de aanvraag bij de kantonrechter en begeleiden u door de stappen.</p></div>
+      <div class="step"><div class="n">4</div><h3>Mentor aan de slag</h3><p>Na de benoeming staan wij naast u bij beslissingen over zorg en welzijn.</p></div>
+    </div>
+  </div></section>
+
+  <!-- KOSTEN -->
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="kosten">
+      <div>
+        <h2>Wat kost mentorschap?</h2>
+        <p>De kosten worden jaarlijks wettelijk vastgesteld door de overheid. Heeft u een laag inkomen? Dan vergoedt de gemeente de kosten vaak via de bijzondere bijstand. We bespreken dit vooraf, helder en zonder verrassingen.</p>
+      </div>
+      <a class="btn btn-onleaf" href="#contact">Vraag naar de kosten</a>
+    </div>
+  </div></section>
+
+  <!-- VRAGEN -->
+  <section id="vragen" class="sec" style="background:var(--blush); border-block:1px solid var(--line)"><div class="wrap">
+    <div class="sec-head center"><span class="lbl">Veelgestelde vragen</span><h2>Goed om te weten</h2></div>
+    <div class="faq">
+      <details open><summary>Wat is mentorschap?<span class="pm">+</span></summary><p>Mentorschap is een wettelijke maatregel voor mensen die door ziekte of een beperking niet goed zelf kunnen beslissen over hun zorg en welzijn. De kantonrechter benoemt een mentor die deze beslissingen samen met en voor de betrokkene neemt.</p></details>
+      <details><summary>Voor wie is mentorschap bedoeld?<span class="pm">+</span></summary><p>Voor mensen in een kwetsbare situatie die intensieve zorg nodig hebben en zelf niet goed keuzes kunnen maken over verzorging, verpleging, behandeling of begeleiding, en die niemand in hun omgeving hebben die dit kan doen.</p></details>
+      <details><summary>Wat kost mentorschap?<span class="pm">+</span></summary><p>De kosten worden jaarlijks wettelijk vastgesteld door de overheid. Bij een laag inkomen vergoedt de gemeente de kosten vaak via de bijzondere bijstand.</p></details>
+      <details><summary>Hoe vraag ik een mentor aan in Haaglanden?<span class="pm">+</span></summary><p>Neem contact op via info@mentorschaphaaglanden.nl of het aanmeldformulier. Na een vrijblijvende kennismaking begeleiden wij de aanvraag bij de kantonrechter.</p></details>
+      <details><summary>Wat is het verschil met bewindvoering?<span class="pm">+</span></summary><p>Mentorschap gaat over beslissingen rond zorg en welzijn. Bewindvoering gaat over geld en bezittingen. Soms zijn beide nodig; dan kunnen ze naast elkaar lopen.</p></details>
+    </div>
+  </div></section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec"><div class="wrap">
+    <div class="contact"><div class="inner">
+      <img class="photo" src="img/contact.jpg" alt="Een jongere en oudere hand houden elkaar vast als teken van steun en vertrouwen." width="760" height="620" loading="lazy">
+      <div>
+        <h2>Een mentor <span class="em">nodig</span>?</h2>
+        <p>Een eerste gesprek is gratis en vrijblijvend. We luisteren naar uw verhaal en vertellen eerlijk wat mentorschap voor u kan betekenen.</p>
+        <div style="margin-top:1.4rem"><a class="btn btn-primary" href="mailto:info@mentorschaphaaglanden.nl">Stuur een bericht</a></div>
+      </div>
+      <div class="cinfo">
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:info@mentorschaphaaglanden.nl">info@mentorschaphaaglanden.nl</a></span>
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> Regio Haaglanden, Den Haag</span>
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg> KvK 98002252</span>
+      </div>
+    </div></div>
+  </div></section>
+</main>
+
+<footer class="ft"><div class="wrap">
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a class="brand" href="#top" style="font-size:1.15rem">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 26c0-7 4-12 10-13-1 7-4 12-10 13z" fill="var(--leaf)"/>
+          <path d="M24 26c0-6-3.5-10.5-9-11.5C16 20 19.5 25 24 26z" fill="color-mix(in srgb,var(--leaf) 60%,var(--bg))"/>
+          <path d="M24 26v9" stroke="var(--leaf)" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M11 33c3.5 5 8 7 13 7s9.5-2 13-7" stroke="var(--coral)" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+        <span>Mentorschap Haaglanden</span>
+      </a>
+      <p>Professioneel mentorschap voor mensen in een kwetsbare situatie in Den Haag en de regio Haaglanden. Met aandacht, geduld en respect.</p>
+    </div>
+    <div class="ft-col"><h4>Mentorschap</h4><a href="#wat">Wat is mentorschap</a><a href="#voor-wie">Voor wie</a><a href="#werkwijze">Werkwijze</a><a href="#vragen">Kosten &amp; vragen</a></div>
+    <div class="ft-col"><h4>Contact</h4><a href="mailto:info@mentorschaphaaglanden.nl">info@mentorschaphaaglanden.nl</a><span>Regio Haaglanden, Den Haag</span><span>KvK 98002252</span></div>
+    <div class="ft-col"><h4>Regio</h4><span>Den Haag</span><span>Rijswijk · Zoetermeer</span><span>Leidschendam-Voorburg</span></div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2026 Mentorschap Haaglanden. Alle rechten voorbehouden.</span>
+    <span>Demo-ontwerp. Definitieve teksten en gegevens nog in te vullen. Foto's: Unsplash (rechtenvrij).</span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), n=document.getElementById('nav');
+  if(b&&n){
+    b.addEventListener('click',function(){var o=n.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false');});
+    n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open'); b.setAttribute('aria-expanded','false');}});
+  }
+})();
+</script>
+
+</html>
