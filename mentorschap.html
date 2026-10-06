@@ -81,13 +81,13 @@ a{color:var(--coral-deep)}
 /* hero — full-width beeld met tekst-overlay */
 .hero{position:relative; overflow:hidden; min-height:clamp(460px,66vh,660px); display:grid; align-items:center}
 .hero .bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 35%}
-.hero .veil{position:absolute; inset:0; background:linear-gradient(100deg,rgba(26,20,25,.9) 0%,rgba(26,20,25,.72) 42%,rgba(26,20,25,.3) 72%,rgba(26,20,25,.1) 100%)}
+.hero .veil{position:absolute; inset:0; background:linear-gradient(100deg,rgba(26,20,25,.92) 0%,rgba(26,20,25,.8) 50%,rgba(26,20,25,.5) 78%,rgba(26,20,25,.25) 100%)}
 .hero .wrap{position:relative; padding-block:clamp(2.6rem,6vw,4.5rem)}
-.hero .inner{max-width:38rem}
+.hero .inner{max-width:52rem}
 .hero .lbl{color:#9fe0c3}
-.hero h1{font-size:clamp(2.5rem,6.2vw,4.6rem); margin:1rem 0 1.2rem; color:#fff}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5rem); margin:1rem 0 1.2rem; color:#fff; max-width:16ch}
 .hero h1 .hl{color:var(--coral)}
-.hero .lead{font-size:clamp(1.1rem,2vw,1.3rem); color:rgba(255,255,255,.9); max-width:40ch; margin-bottom:1.9rem}
+.hero .lead{font-size:clamp(1.12rem,2vw,1.35rem); color:rgba(255,255,255,.92); max-width:52ch; margin-bottom:1.9rem}
 .hero-cta{display:flex; gap:.9rem; flex-wrap:wrap}
 .hero .btn-ghost{color:#fff; border-color:rgba(255,255,255,.5)}
 .hero .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,.1)}
@@ -204,6 +204,16 @@ details p{color:var(--muted); padding-bottom:1.3rem}
 .ft-col a,.ft-col span{display:block; color:var(--ink); text-decoration:none; font-size:.97rem; margin-bottom:.5rem; opacity:.85}
 .ft-col a:hover{opacity:1; color:var(--coral-deep)}
 .ft-bot{margin-top:2.4rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between}
+/* partners / logo-wand */
+.partners{background:var(--surface); border-block:1px solid var(--line)}
+.logos{display:grid; grid-template-columns:repeat(5,1fr); gap:1rem}
+@media(max-width:860px){.logos{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.logos{grid-template-columns:repeat(2,1fr)}}
+.logo{aspect-ratio:3/2; border:1px dashed var(--line); border-radius:14px; display:grid; place-items:center; padding:1rem; background:var(--bg); color:var(--muted); transition:.18s}
+.logo:hover{border-color:var(--leaf); color:var(--ink)}
+.logo svg{width:100%; height:auto; max-height:46px; opacity:.75}
+.logo .cap{display:block; text-align:center; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600; margin-top:.5rem}
+.partners .hint{margin-top:1.6rem; font-size:.9rem; color:var(--muted); text-align:center}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -226,6 +236,7 @@ details p{color:var(--muted); padding-bottom:1.3rem}
     <a href="#voor-wie">Voor wie</a>
     <a href="#werkwijze">Werkwijze</a>
     <a href="#vragen">Vragen</a>
+    <a href="#partners">Partners</a>
     <a class="btn btn-primary" href="#contact">Mentor aanvragen</a>
   </nav>
 </div></header>
@@ -371,6 +382,25 @@ details p{color:var(--muted); padding-bottom:1.3rem}
     </div>
   </div></section>
 
+  <!-- PARTNERS / SAMENWERKING -->
+  <section id="partners" class="partners"><div class="wrap sec">
+    <div class="sec-head center"><span class="lbl">Samenwerking</span><h2>Met wie wij samenwerken</h2>
+      <p>Mentorschap werkt het best in een sterk netwerk. Wij werken samen met zorginstellingen, gemeenten, hulpverleners en behandelaars in de regio Haaglanden.</p></div>
+    <div class="logos">
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="3"/><path d="M48 16h40M48 24h56M48 32h32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><rect x="12" y="12" width="24" height="24" rx="5" stroke="currentColor" stroke-width="3"/><path d="M48 18h52M48 30h38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M24 10l12 7v14l-12 7-12-7V17z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M52 16h46M52 28h30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M14 30c0-8 5-13 12-14-1 8-5 13-12 14z" fill="currentColor"/><path d="M48 16h44M48 28h34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><circle cx="18" cy="24" r="7" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="24" r="7" stroke="currentColor" stroke-width="3"/><path d="M52 18h50M52 30h26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M24 12v24M12 24h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="3"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M16 34V14l10 8 10-8v20" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M52 18h44M52 30h30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M24 12l4 8 9 1-6.5 6 1.5 9-8-4-8 4 1.5-9L11 21l9-1z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M52 18h46M52 30h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><rect x="12" y="14" width="26" height="20" rx="10" stroke="currentColor" stroke-width="3"/><path d="M52 18h42M52 30h34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+      <span class="logo"><span><svg viewBox="0 0 120 48" fill="none" aria-hidden="true"><path d="M24 12c6 6 6 18 0 24-6-6-6-18 0-24z" stroke="currentColor" stroke-width="3"/><path d="M12 24h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M52 18h44M52 30h26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="cap">Partnerlogo</span></span></span>
+    </div>
+    <p class="hint">Dit zijn voorbeeldvakken. Lever de echte logo's van uw samenwerkingspartners aan, dan plaatsen wij ze hier netjes en op gelijke grootte.</p>
+  </div></section>
+
   <!-- CONTACT -->
   <section id="contact" class="sec"><div class="wrap">
     <div class="contact"><div class="inner">
@@ -404,7 +434,7 @@ details p{color:var(--muted); padding-bottom:1.3rem}
       </a>
       <p>Professioneel mentorschap voor mensen in een kwetsbare situatie in Den Haag en de regio Haaglanden. Met aandacht, geduld en respect.</p>
     </div>
-    <div class="ft-col"><h4>Mentorschap</h4><a href="#wat">Wat is mentorschap</a><a href="#voor-wie">Voor wie</a><a href="#werkwijze">Werkwijze</a><a href="#vragen">Kosten &amp; vragen</a></div>
+    <div class="ft-col"><h4>Mentorschap</h4><a href="#wat">Wat is mentorschap</a><a href="#voor-wie">Voor wie</a><a href="#werkwijze">Werkwijze</a><a href="#partners">Partners</a><a href="#vragen">Kosten &amp; vragen</a></div>
     <div class="ft-col"><h4>Contact</h4><a href="tel:+31854860702">085 486 07 02</a><a href="mailto:info@mentorschaphaaglanden.nl">info@mentorschaphaaglanden.nl</a><span>Regio Haaglanden, Den Haag</span><span>KvK 98002252</span></div>
     <div class="ft-col"><h4>Regio</h4><span>Den Haag</span><span>Rijswijk · Zoetermeer</span><span>Leidschendam-Voorburg</span></div>
   </div>
